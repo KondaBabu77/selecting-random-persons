@@ -1,0 +1,48 @@
+*{
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    
+}
+body{
+    background-color: rgb(92, 189, 230);
+    font-size: 30px;
+}
+
+form{
+    text-align: center;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+.dynamic{
+    text-align: center;
+    margin-left: 12px;
+    border-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 25px;
+}
+#randomBtn{
+    margin-left: 85px; 
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: #04AA6D;
+}
+#p2{
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+#n{
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 25px;
+}
+#btn{
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 25px;
+    background-color: #04AA6D;
+}

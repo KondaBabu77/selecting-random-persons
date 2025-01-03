@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choosing Random Person</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form id="m">
+        <label for="">Enter number of persons:</label> <br> <br>
+        <input type="text" name="" id="n"> <br> <br>
+        <input type="submit" value="Enter" id="btn">
+    </form>
+    <p id="p1"></p>
+    <p id="p3"></p>  
+    <p id="p2"></p> 
+
+    <script>
+        document.getElementById("m").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const n = parseInt(document.getElementById("n").value);
+
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            // Clear previous input fields
+            document.getElementById("p3").innerHTML = '';
+
+            // Create dynamic input fields
+            for (let i = 1; i <= n; i++) {
+                const inputField = `<input type="text" id="person${i}" class="dynamic" placeholder="Person ${i}"><br><br>`;
+                document.getElementById("p3").innerHTML += inputField;
+            }
+
+            // Add a button to get input values
+            document.getElementById("p3").innerHTML += `<button id="randomBtn">Random person</button>`;
+
+            // Attach event listener to the button
+            document.getElementById("randomBtn").addEventListener("click", function() {
+                getValues(n);
+            });
+        });
+
+        function getValues(n) {
+            const randomInt = getRandomInt(1, n);
+            const name = document.getElementById(`person${randomInt}`).value; 
+            document.getElementById("p2").innerHTML = `Winner is: ${name}`;
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+</html>
