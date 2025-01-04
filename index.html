@@ -6,18 +6,18 @@
     <title>Choosing Random Person</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <form id="m">
-        <label for="">Enter number of persons:</label> <br> <br>
-        <input type="text" name="" id="n"> <br> <br>
+        <label for="">Enter number of persons:</label> <br><br>
+        <input type="text" name="" id="n"> <br><br>
         <input type="submit" value="Enter" id="btn">
     </form>
     <p id="p1"></p>
-    <p id="p3"></p>  
-    <p id="p2"></p> 
+    <p id="p3"></p>
+    <p id="p2"></p>
 
     <script>
         document.getElementById("m").addEventListener("submit", function(event) {
@@ -30,19 +30,15 @@
                 return;
             }
 
-            // Clear previous input fields
             document.getElementById("p3").innerHTML = '';
 
-            // Create dynamic input fields
             for (let i = 1; i <= n; i++) {
                 const inputField = `<input type="text" id="person${i}" class="dynamic" placeholder="Person ${i}"><br><br>`;
                 document.getElementById("p3").innerHTML += inputField;
             }
 
-            // Add a button to get input values
             document.getElementById("p3").innerHTML += `<button id="randomBtn">Random person</button>`;
 
-            // Attach event listener to the button
             document.getElementById("randomBtn").addEventListener("click", function() {
                 getValues(n);
             });
