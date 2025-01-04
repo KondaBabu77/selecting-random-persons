@@ -1,48 +1,66 @@
-*{
-    font-family: "Rubik", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    
+/* General styles */
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+body {
     background-color: rgb(92, 189, 230);
-    font-size: 30px;
+    font-size: 16px;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 100vw;
 }
 
-form{
+/* Form styles */
+form {
     text-align: center;
-    padding-top: 30px;
-    justify-content: space-between;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
 }
-.dynamic{
-    text-align: center;
-    margin-left: 145px;
-    border-color: black;
+
+.dynamic, #n, #btn, #randomBtn {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
     border-radius: 15px;
     padding: 10px;
-    font-size: 25px;
+    font-size: 1rem;
+    border: 1px solid black;
 }
-#randomBtn{
-    margin-left: 85px; 
-    border-radius: 15px;
-    padding: 10px;
-    font-size: 25px;
+
+#randomBtn, #btn {
     background-color: #04AA6D;
+    color: white;
+    cursor: pointer;
+    border: none;
 }
-#p2{
+
+#p2 {
     text-align: center;
     font-weight: bold;
-    font-size: larger;
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
-#n{
-    border-radius: 15px;
-    padding: 15px;
-    font-size: 25px;
-}
-#btn{
-    border-radius: 15px;
-    padding: 15px;
-    font-size: 25px;
-    background-color: #04AA6D;
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .dynamic, #n, #btn, #randomBtn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
